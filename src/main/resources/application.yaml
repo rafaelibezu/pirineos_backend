@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: pirineos-api
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pirineos_db
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+server:
+  port: 8080
+
+security:
+  jwt:
+    secret: LOS-PIRINEOS-SUPER-SECRET-KEY-2026-CHANGE-IN-PRODUCTION-123456789
+    expiration: 28800000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    disable-swagger-default-url: true
