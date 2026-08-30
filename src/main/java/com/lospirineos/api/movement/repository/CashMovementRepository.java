@@ -43,4 +43,16 @@ public interface CashMovementRepository
             OffsetDateTime start,
             OffsetDateTime end
     );
+
+    // =========================================================
+    // DASHBOARD CAMARERO - MOVIMIENTOS RECIENTES
+    // =========================================================
+
+    @EntityGraph(attributePaths = {
+            "shift",
+            "user"
+    })
+    List<CashMovement> findTop5ByUserIdOrderByMovementAtDesc(
+            Long userId
+    );
 }

@@ -20,7 +20,8 @@ public class SwaggerGroupsConfig {
                         "/api/v1/closings/**",
                         "/api/v1/transfers/**",
                         "/api/v1/movements/**",
-                        "/api/v1/collection/**"
+                        "/api/v1/collection/**",
+                        "/api/v1/dashboard/admin/**"
                 )
                 .build();
     }
@@ -38,7 +39,8 @@ public class SwaggerGroupsConfig {
                         "/api/v1/closings/**",
                         "/api/v1/transfers/**",
                         "/api/v1/movements/**",
-                        "/api/v1/collection/mine/**"
+                        "/api/v1/collection/mine/**",
+                        "/api/v1/dashboard/waiter/**"
                 )
                 .build();
     }

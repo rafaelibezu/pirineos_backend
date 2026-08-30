@@ -27,4 +27,14 @@ public interface CashTransferRepository
     List<CashTransfer> findAllByResponsibleUserId(
             Long responsibleUserId
     );
+
+    @EntityGraph(attributePaths = {
+            "shift",
+            "responsibleUser",
+            "sourceCashRegister",
+            "destinationCashRegister"
+    })
+    List<CashTransfer> findTop5ByResponsibleUserIdOrderByTransferAtDesc(
+            Long responsibleUserId
+    );
 }
